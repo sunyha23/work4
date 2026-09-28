@@ -84,44 +84,10 @@ body{
 
 #bubble3{
 	position:absolute;
-	top:27%;
+	top:31%;
 	left:65%;
 	width:15%;
 	height:15%;
-	background:white;
-	border:1px solid #999999;
-	border-radius:50%;
-	color:black;
-	text-align:center;
-	display:flex;
-	align-items:center;
-	justify-content:center;
-	font-size:1.7vh;
-}
-
-#bubble4{
-	position:absolute;
-	top:34%;
-	left:75%;
-	width:10.5%;
-	height:16.8%;
-	background:white;
-	border:1px solid #999999;
-	border-radius:50%;
-	color:black;
-	text-align:center;
-	display:flex;
-	align-items:center;
-	justify-content:center;
-	font-size:1.7vh;
-}
-
-#bubble5{
-	position:absolute;
-	top:34%;
-	left:45%;
-	width:20.8%;
-	height:10.4%;
 	background:white;
 	border:1px solid #999999;
 	border-radius:50%;
@@ -205,10 +171,6 @@ body{
 
 	<div id="bubble3">생각 3</div>
 
-	<div id="bubble4">생각 4</div>
-
-	<div id="bubble5">생각 5</div>
-
 </div>
 
 
@@ -256,20 +218,17 @@ body{
 
 
 let selected = "bubble1";
+		sizeSlider.max = 28;
 
 
 let size1 = 23;
 let size2 = 18;
 let size3 = 15;
-let size4 = 14;
-let size5 = 16;
 
 
 let color1 = "#ffffff";
 let color2 = "#ffffff";
 let color3 = "#ffffff";
-let color4 = "#ffffff";
-let color5 = "#ffffff";
 
 
 let subwayOn = "no";
@@ -285,8 +244,6 @@ bubble1.onclick = function(){
 	bubble1.style.border = "3px solid black";
 	bubble2.style.border = "1px solid #999999";
 	bubble3.style.border = "1px solid #999999";
-	bubble4.style.border = "1px solid #999999";
-	bubble5.style.border = "1px solid #999999";
 
 	sizeSlider.value = size1;
 	colorInput.value = color1;
@@ -298,12 +255,11 @@ bubble1.onclick = function(){
 bubble2.onclick = function(){
 
 	selected = "bubble2";
+		sizeSlider.max = 28;
 
 	bubble1.style.border = "1px solid #999999";
 	bubble2.style.border = "3px solid black";
 	bubble3.style.border = "1px solid #999999";
-	bubble4.style.border = "1px solid #999999";
-	bubble5.style.border = "1px solid #999999";
 
 	sizeSlider.value = size2;
 	colorInput.value = color2;
@@ -315,49 +271,14 @@ bubble2.onclick = function(){
 bubble3.onclick = function(){
 
 	selected = "bubble3";
+		sizeSlider.max = 28;
 
 	bubble1.style.border = "1px solid #999999";
 	bubble2.style.border = "1px solid #999999";
 	bubble3.style.border = "3px solid black";
-	bubble4.style.border = "1px solid #999999";
-	bubble5.style.border = "1px solid #999999";
 
 	sizeSlider.value = size3;
 	colorInput.value = color3;
-
-};
-
-
-
-bubble4.onclick = function(){
-
-	selected = "bubble4";
-
-	bubble1.style.border = "1px solid #999999";
-	bubble2.style.border = "1px solid #999999";
-	bubble3.style.border = "1px solid #999999";
-	bubble4.style.border = "3px solid black";
-	bubble5.style.border = "1px solid #999999";
-
-	sizeSlider.value = size4;
-	colorInput.value = color4;
-
-};
-
-
-
-bubble5.onclick = function(){
-
-	selected = "bubble5";
-
-	bubble1.style.border = "1px solid #999999";
-	bubble2.style.border = "1px solid #999999";
-	bubble3.style.border = "1px solid #999999";
-	bubble4.style.border = "1px solid #999999";
-	bubble5.style.border = "3px solid black";
-
-	sizeSlider.value = size5;
-	colorInput.value = color5;
 
 };
 
@@ -391,16 +312,7 @@ thoughtInput.oninput = function(){
 	}else if(selected == "bubble3"){
 
 		bubble3.innerHTML = thoughtInput.value;
-
-	}else if(selected == "bubble4"){
-
-		bubble4.innerHTML = thoughtInput.value;
-
-	}else if(selected == "bubble5"){
-
-		bubble5.innerHTML = thoughtInput.value;
-
-	}
+}
 
 };
 
@@ -428,55 +340,7 @@ sizeSlider.oninput = function(){
 		bubble3.style.height = sizeSlider.value + "%";
 
 		size3 = 15;
-
-	}else if(selected == "bubble4"){
-
-		bubble4.style.width = (sizeSlider.value * 0.75) + "%";
-		bubble4.style.height = (sizeSlider.value * 1.2) + "%";
-
-		size4 = 14;
-
-	}else if(selected == "bubble5"){
-
-		bubble5.style.width = (sizeSlider.value * 1.3) + "%";
-		bubble5.style.height = (sizeSlider.value * 0.65) + "%";
-
-		size5 = 16;
-
-	}
-
-};
-
-
-
-colorInput.oninput = function(){
-
-	if(selected == "bubble1"){
-
-		bubble1.style.background = colorInput.value;
-		color1 = colorInput.value;
-
-	}else if(selected == "bubble2"){
-
-		bubble2.style.background = colorInput.value;
-		color2 = colorInput.value;
-
-	}else if(selected == "bubble3"){
-
-		bubble3.style.background = colorInput.value;
-		color3 = colorInput.value;
-
-	}else if(selected == "bubble4"){
-
-		bubble4.style.background = colorInput.value;
-		color4 = colorInput.value;
-
-	}else if(selected == "bubble5"){
-
-		bubble5.style.background = colorInput.value;
-		color5 = colorInput.value;
-
-	}
+}
 
 };
 
@@ -615,12 +479,11 @@ placeAlley.onclick = function(){
 resetButton.onclick = function(){
 
 	selected = "bubble1";
+	sizeSlider.max = 28;
 
 	bubble1.innerHTML = "생각 1";
 	bubble2.innerHTML = "생각 2";
 	bubble3.innerHTML = "생각 3";
-	bubble4.innerHTML = "생각 4";
-	bubble5.innerHTML = "생각 5";
 
 	bubble1.style.width = "23%";
 	bubble1.style.height = "23%";
@@ -631,35 +494,21 @@ resetButton.onclick = function(){
 	bubble3.style.width = "15%";
 	bubble3.style.height = "15%";
 
-	bubble4.style.width = "10.5%";
-	bubble4.style.height = "16.8%";
-
-	bubble5.style.width = "20.8%";
-	bubble5.style.height = "10.4%";
-
 	bubble1.style.background = "white";
 	bubble2.style.background = "white";
 	bubble3.style.background = "white";
-	bubble4.style.background = "white";
-	bubble5.style.background = "white";
 
 	bubble1.style.border = "3px solid black";
 	bubble2.style.border = "1px solid #999999";
 	bubble3.style.border = "1px solid #999999";
-	bubble4.style.border = "1px solid #999999";
-	bubble5.style.border = "1px solid #999999";
 
 	size1 = 23;
 	size2 = 18;
 	size3 = 15;
-	size4 = 14;
-	size5 = 16;
 
 	color1 = "#ffffff";
 	color2 = "#ffffff";
 	color3 = "#ffffff";
-	color4 = "#ffffff";
-	color5 = "#ffffff";
 
 	title.innerHTML = "(   )의 머릿속";
 
