@@ -51,9 +51,9 @@ body{
 #bubble1{
 	position:absolute;
 	top:12%;
-	left:35%;
-	width:190px;
-	height:190px;
+	left:31%;
+	width:23%;
+	height:23%;
 	background:white;
 	border:3px solid black;
 	border-radius:50%;
@@ -68,9 +68,9 @@ body{
 #bubble2{
 	position:absolute;
 	top:13%;
-	left:55%;
-	width:140px;
-	height:140px;
+	left:57%;
+	width:18%;
+	height:18%;
 	background:white;
 	border:1px solid #999999;
 	border-radius:50%;
@@ -84,10 +84,10 @@ body{
 
 #bubble3{
 	position:absolute;
-	top:25%;
-	left:63%;
-	width:140px;
-	height:140px;
+	top:27%;
+	left:65%;
+	width:15%;
+	height:15%;
 	background:white;
 	border:1px solid #999999;
 	border-radius:50%;
@@ -101,10 +101,10 @@ body{
 
 #bubble4{
 	position:absolute;
-	top:31%;
-	left:77%;
-	width:105px;
-	height:168px;
+	top:34%;
+	left:80%;
+	width:10.5%;
+	height:16.8%;
 	background:white;
 	border:1px solid #999999;
 	border-radius:50%;
@@ -118,10 +118,10 @@ body{
 
 #bubble5{
 	position:absolute;
-	top:32%;
+	top:34%;
 	left:45%;
-	width:188.5px;
-	height:94.25px;
+	width:20.8%;
+	height:10.4%;
 	background:white;
 	border:1px solid #999999;
 	border-radius:50%;
@@ -230,7 +230,7 @@ body{
 	<input type="text" id="thoughtInput">
 
 	<p class="label">이 생각이 머릿속을 얼마나 차지하고 있나요?</p>
-	<input type="range" id="sizeSlider" min="60" max="190" value="190">
+	<input type="range" id="sizeSlider" min="8" max="28" value="23" step="0.5">
 
 	<p class="label">이 생각은 어떤 색인가요?</p>
 	<input type="color" id="colorInput" value="#ffffff">
@@ -258,11 +258,11 @@ body{
 let selected = "bubble1";
 
 
-let size1 = 190;
-let size2 = 140;
-let size3 = 140;
-let size4 = 140;
-let size5 = 145;
+let size1 = 23;
+let size2 = 18;
+let size3 = 15;
+let size4 = 14;
+let size5 = 16;
 
 
 let color1 = "#ffffff";
@@ -410,38 +410,38 @@ sizeSlider.oninput = function(){
 
 	if(selected == "bubble1"){
 
-		bubble1.style.width = sizeSlider.value + "px";
-		bubble1.style.height = sizeSlider.value + "px";
+		bubble1.style.width = sizeSlider.value + "%";
+		bubble1.style.height = sizeSlider.value + "%";
 
-		size1 = sizeSlider.value;
+		size1 = 23;
 
 	}else if(selected == "bubble2"){
 
-		bubble2.style.width = sizeSlider.value + "px";
-		bubble2.style.height = sizeSlider.value + "px";
+		bubble2.style.width = sizeSlider.value + "%";
+		bubble2.style.height = sizeSlider.value + "%";
 
-		size2 = sizeSlider.value;
+		size2 = 18;
 
 	}else if(selected == "bubble3"){
 
-		bubble3.style.width = sizeSlider.value + "px";
-		bubble3.style.height = sizeSlider.value + "px";
+		bubble3.style.width = sizeSlider.value + "%";
+		bubble3.style.height = sizeSlider.value + "%";
 
-		size3 = sizeSlider.value;
+		size3 = 15;
 
 	}else if(selected == "bubble4"){
 
-		bubble4.style.width = (sizeSlider.value * 0.75) + "px";
-		bubble4.style.height = (sizeSlider.value * 1.2) + "px";
+		bubble4.style.width = (sizeSlider.value * 0.75) + "%";
+		bubble4.style.height = (sizeSlider.value * 1.2) + "%";
 
-		size4 = sizeSlider.value;
+		size4 = 14;
 
 	}else if(selected == "bubble5"){
 
-		bubble5.style.width = (sizeSlider.value * 1.3) + "px";
-		bubble5.style.height = (sizeSlider.value * 0.65) + "px";
+		bubble5.style.width = (sizeSlider.value * 1.3) + "%";
+		bubble5.style.height = (sizeSlider.value * 0.65) + "%";
 
-		size5 = sizeSlider.value;
+		size5 = 16;
 
 	}
 
@@ -622,20 +622,20 @@ resetButton.onclick = function(){
 	bubble4.innerHTML = "생각 4";
 	bubble5.innerHTML = "생각 5";
 
-	bubble1.style.width = "190px";
-	bubble1.style.height = "190px";
+	bubble1.style.width = "23%";
+	bubble1.style.height = "23%";
 
-	bubble2.style.width = "140px";
-	bubble2.style.height = "140px";
+	bubble2.style.width = "18%";
+	bubble2.style.height = "18%";
 
-	bubble3.style.width = "140px";
-	bubble3.style.height = "140px";
+	bubble3.style.width = "15%";
+	bubble3.style.height = "15%";
 
-	bubble4.style.width = "105px";
-	bubble4.style.height = "168px";
+	bubble4.style.width = "10.5%";
+	bubble4.style.height = "16.8%";
 
-	bubble5.style.width = "188.5px";
-	bubble5.style.height = "94.25px";
+	bubble5.style.width = "20.8%";
+	bubble5.style.height = "10.4%";
 
 	bubble1.style.background = "white";
 	bubble2.style.background = "white";
@@ -649,11 +649,11 @@ resetButton.onclick = function(){
 	bubble4.style.border = "1px solid #999999";
 	bubble5.style.border = "1px solid #999999";
 
-	size1 = 190;
-	size2 = 140;
-	size3 = 140;
-	size4 = 140;
-	size5 = 145;
+	size1 = 23;
+	size2 = 18;
+	size3 = 15;
+	size4 = 14;
+	size5 = 16;
 
 	color1 = "#ffffff";
 	color2 = "#ffffff";
@@ -665,7 +665,7 @@ resetButton.onclick = function(){
 
 	nameInput.value = "";
 	thoughtInput.value = "";
-	sizeSlider.value = 190;
+	sizeSlider.value = 23;
 	colorInput.value = "#ffffff";
 
 	placeBackground.style.opacity = "0";
